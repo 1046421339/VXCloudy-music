@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	worktree = E:/
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/1046421339/VXCloudy-music.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
