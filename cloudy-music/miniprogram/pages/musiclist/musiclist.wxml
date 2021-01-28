@@ -1,0 +1,29 @@
+<!--  判断是否有封面图，有就作为顶部view区域的背景图 -->
+<view wx:if="{{listInfo.coverImgUrl}}" class='detail-container' 
+    style='background:url({{listInfo.coverImgUrl}}) no-repeat top/cover'>
+</view>
+<!-- 遮罩层 -->
+<view class='detail-mask'></view>
+<!-- 歌单信息，左图右文-->
+<view class='detail-info'>
+    <image src="{{listInfo.coverImgUrl}}" class='detail-img'></image>
+    <view class='detail-name'>{{listInfo.name}}</view>
+</view>
+<!--使用歌曲列表组件-->
+<xu-musiclist musiclist="{{musiclist}}"/>
+
+<block wx:for="{{musiclist}}" wx:key="id">
+   <view class="musiclist-container">
+       <!-- 序号-->
+       <view class="musiclist-index">{{index+1}}</view>
+       <!-- 歌曲信息容器 -->
+       <view class="musiclist-info">
+            <!-- 歌名 -->
+             <view class="musiclist-name">
+                {{item.name}}
+             </view>
+             <!-- 歌手和别名-->
+             <view class="musiclist-singer">{{item.ar[0].name}}-{{item.al.name}}</view>
+       </view>
+   </view>
+</block>
